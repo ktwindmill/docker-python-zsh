@@ -22,12 +22,15 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'jiangmiao/auto-pairs'
 
-" Multi cursors
-Plug 'terryma/vim-multiple-cursors'
+" " Multi cursors
+" Plug 'terryma/vim-multiple-cursors'
 
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" Comments
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -84,11 +87,6 @@ EOF
 let g:user_emmet_leader_key=','
 let g:mapleader = ' '
 
-" mappings
-map <C-n> :NERDTreeToggle<CR>
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
-
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 inoremap jh <Esc>
 
@@ -137,3 +135,15 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+
+" multi cursors
+" let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_start_key='<F5>'
+" let g:multi_cursor_next_key='<C-x>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-k>'
+" let g:multi_cursor_quit_key='<Esc>'
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
