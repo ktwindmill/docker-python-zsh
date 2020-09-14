@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'luochen1990/rainbow'
 
 " Better Visual Guide
 Plug 'Yggdroot/indentLine'
@@ -38,7 +39,7 @@ filetype plugin indent on
 
 set encoding=utf-8
 syntax on
-color seoul256
+silent! color seoul256
 set background=dark
 set list
 set listchars=space:.
@@ -104,7 +105,7 @@ vnoremap <Leader>P "+P
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
 " terminal cmds
-nnoremap <Leader>T :terminal<CR>
+nnoremap <Leader>T :split term://zsh<CR>
 tnoremap jh  <C-\><C-n>
 
 " Delete mappings
@@ -125,6 +126,13 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
+
+" jedi
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#show_call_signatures = 0
+let g:deoplete#sources#jedi#show_docstring = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -147,3 +155,6 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>
+
+" Rainbow parentheses
+let g:rainbow_active = 1
