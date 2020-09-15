@@ -14,13 +14,11 @@ docker run --rm -it --entrypoint /bin/zsh jcarp/dev-nvim-zsh
 # Mount volume on run
 docker run -v ~/Repos:/root/Repos --rm -it --entrypoint /bin/zsh jcarp/dev-nvim-zsh
 
-
-# Install nvim plugins
-nvim
-
-# Interactive nvim gui
-:PlugInstall
-```
+# Forward clipboard from host to container (best saved as an alias)
+# REQUIRED: setup xhost local connections
+xhost local:root
+# start container
+docker run --rm -it -e DISPLAY -v ~/Repos:/root/Repos -v  /tmp/.X11-unix:/tmp/.X11-unix --entrypoint /bin/zsh jcarp/dev-nvim-zsh
 
 ## Dev
 
