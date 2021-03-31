@@ -1,11 +1,9 @@
-# Dev Docker Image
-
-Personal docker dev image with neovim and zsh install. Includes jdk and scala
+# Python image with zsh install
 
 
 ```
 # Pull image
-docker pull jcarp/dev-nvim-zsh
+docker pull jcarp/python-zsh-3.8.5
 
 # Run image
 docker run --rm -it --entrypoint /bin/zsh jcarp/dev-nvim-zsh
@@ -14,18 +12,7 @@ docker run --rm -it --entrypoint /bin/zsh jcarp/dev-nvim-zsh
 # Mount volume on run
 docker run -v ~/Repos:/root/Repos --rm -it --entrypoint /bin/zsh jcarp/dev-nvim-zsh
 
-# Forward clipboard from host to container (best saved as an alias)
-# REQUIRED: setup xhost local connections
-xhost local:root
-# start container
-docker run --rm -it -e DISPLAY -v ~/Repos:/root/Repos -v  /tmp/.X11-unix:/tmp/.X11-unix --entrypoint /bin/zsh jcarp/dev-nvim-zsh
-
-## Dev
-
-```
 # Build image
-docker build . -t jcarp/dev-nvim-zsh
+docker build . -t jcarp/python-zsh-3.8.5
 
-# Push image
-docker push jcarp/dev-nvim-zsh
 ```
