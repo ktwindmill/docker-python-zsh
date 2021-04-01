@@ -1,4 +1,4 @@
-FROM python:3.8.5
+FROM python:3.7.0
 
 RUN apt-get update && apt-get install --assume-yes curl zsh python3-opencv
 
